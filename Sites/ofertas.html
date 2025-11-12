@@ -84,49 +84,113 @@
             border-radius: 8px;
         }
 
-        /* Footer */
-        footer {
+    /*FOOTER*/
+
+    footer {
+            width: 100%;
             background-color: #765827;
-            color: #EAC696;
+            padding: 10px;
+            background: linear-gradient(348deg, rgba(234,198,150) 0%, hsl(41, 97%, 14%) 100%);
             text-align: center;
-            padding: 2em 1em;
             margin-top: 2em;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-secciones,
+        .footer-contacto {
+            text-align: left;
+        }
+
+        .footer-secciones h3,
+        .footer-contacto h3 {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .footer-secciones ul,
+        .footer-contacto ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-secciones li,
+        .footer-contacto li {
+            margin-bottom: 5px;
+        }
+
+        .derechos{
+            text-align: center;
+            margin-top: 30px;
         }
     </style>
 </head>
 
-<footer>
+<header>
+    <!-- Banner -->
+    <span class="banner">
+        <div class="logo">
+            <img src="/img/logo.png" alt="Le Nid de Café">
+        </div>
+    </span>
 
-    <div class="footer-container">
-        <div class="footer-secciones">
-            <h3>Secciones</h3>
-            <ul>
-                <li><a href="#">Inicio</a></li>
-                <li><a href="./cafes.html">Cafés</a></li>
-                <li><a href="#">Accesorios</a></li>
-                <li><a href="#">Infusiones</a></li>
-                <li><a href="#">Ofertas</a></li>
-            </ul>
-        </div>
-        <div class="footer-contacto">
-            <h3>Contacto</h3>
-            <ul>
-                <li>Telefono contacto: 986-203-475</li>
-                <li>Correo contacto: <a href="mailto:lenidecafe@gmail.com">leniddecafe@gmail.com</a></li>
-                <li><a href="formulario.html">Contacto</a></li>
-            </ul>
-        </div>
-        <div class="footer-secciones">
-            <h3>Legal</h3>
-            <ul>
-                <li>Términos y Cóndiciones</li>
-                <li>Política de Privacidad</li>
-            </ul>
-        </div>
-    </div>
+    <div class="navigator">
 
-<div class="derechos"></div>
-<p>Le Nid de Café • © 2025 • Todos los derechos reservados</p>
+    <!-- Barra de navegación -->
+    <nav>
+        <a href="index.html" class="logo">Le Nid de Café</a>
+        <div class="menu">
+            <a href="/index.html">Inicio</a>
+            <a href="productos.html">Productos</a>
+            <a href="/Sites/accesorios.html">Accesorios</a>
+            <a href="/Sites/ofertas.html">Ofertas</a>
+            <a href="/Sites/formulario.html">Contacto</a>
+            <a href="/Sites/login.html">Iniciar sesión</a>
+        </div>
+    </nav>
+</div>
+</header>
+
+    <!-- Footer -->
+    <footer>
+
+        <div class="footer-container">
+            <div class="footer-secciones">
+                <h3>Secciones</h3>
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="./Sites/productos.html">Productos</a></li>
+                    <li><a href="#">Accesorios</a></li>
+                    <li><a href="#">Ofertas</a></li>
+                </ul>
+            </div>
+            <div class="footer-contacto">
+                <h3>Contacto</h3>
+                <ul>
+                    <li>Telefono contacto: 986-203-475</li>
+                    <li>Correo contacto: <a href="mailto:lenidecafe@gmail.com">leniddecafe@gmail.com</a></li>
+                    <li><a href="./Sites/formulario.html">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-secciones">
+                <h3>Legal</h3>
+                <ul>
+                    <li>Términos y Cóndiciones</li>
+                    <li>Política de Privacidad</li>
+                </ul>
+            </div>
+        </div>
+
+    <div class="derechos"></div>
+    <p>Le Nid de Café • © 2025 • Todos los derechos reservados</p>
 </footer>
 
 </html>
