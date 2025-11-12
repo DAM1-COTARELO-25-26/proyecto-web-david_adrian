@@ -1,16 +1,537 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Proyecto HTML y CSS - Lenguajes de Marcas (1º DAM)">
-  <title>Grupo 4 - Proyecto Web</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le Nid de Café</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: "Playfair Display", serif;
+            background-color: #EAC696; /* Crema Suave */
+            color: #543310; /* Café Intenso */
+        }
+
+        /* Barra de navegación */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #765827; /* Marrón Tostado */
+            padding: 1em 2em;
+        }
+
+        nav .logo {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #EAC696;
+            text-decoration: none;
+        }
+
+        nav .menu a {
+            margin-left: 1.5em;
+            text-decoration: none;
+            color: #EAC696;
+            font-weight: 600;
+        }
+
+        nav .menu a:hover {
+            color: #C8AE7D; /* Caramelo Claro */
+        }
+
+        /* Sección hero */
+        .hero {
+            text-align: center;
+            padding: 4em 1em;
+        }
+
+        .hero h1 {
+            font-size: 3em;
+            margin: 0.2em 0;
+        }
+
+        .hero h2 {
+            font-size: 1.8em;
+            color: #765827;
+            font-weight: 400;
+            margin: 0.2em 0;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            color: #543310;
+            max-width: 600px;
+            margin: 1em auto 0;
+        }
+
+        /* Sección categorías */
+        .categories {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2em;
+            padding: 2em 1em;
+        }
+
+        .category {
+            width: 200px;
+            text-align: center;
+        }
+
+        .category img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+
+        .products {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            padding: 20px;
+
+        .product-card { /*Etiquetas productos*/
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            width: 200px;
+            height: 300px;
+            text-align: center;
+            padding: 15px;
+            transition: box-shadow 0.3s ease;
+            overflow: hidden;
+            position: relative;
+            margin-bottom: 15px;
+
+        img {
+            max-width: 100%;
+            border-radius: 8px;
+            height: 168px;
+            width: 168px;
+        }
+        
+        h3 {
+            font-size: 16px;
+            margin: 10px 0;
+            color: #333;
+        }
+    
+        .price { /* Color texto precio */
+            font-size: 18px;
+            color: rgb(0, 0, 0);
+            font-weight: bold;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7); /* Fondo semi-transparente */
+            display: flex;
+            flex-direction: column; /* Alinea los elementos en columna */
+            justify-content: center; /* Centra verticalmente */
+            align-items: center; /* Centra horizontalmente */
+            opacity: 0; /* Oculto por defecto */
+            visibility: hidden; /* Evita que ocupe espacio */
+            transition: opacity 0.3s ease-in-out, visibility 0.3s;
+            backdrop-filter: blur(4px); /* Difumina el fondo */
+            border-radius: 8px;
+
+            h3 {
+                color: #fff;
+                margin-bottom: 10px;
+                text-align: center;
+            }
+
+            .overlay-button {
+                padding: 10px 20px;
+                font-size: 16px;
+                color: #fff;
+                background-color: #543310;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: background-color 0.3s;
+            }
+            
+            .overlay-button:hover { /*Efecto del botón del producto*/
+                background-color: #EAC696;
+            }
+    
+            .product-button { /*Color botón ver producto*/
+                margin-top: 10px;
+                padding: 10px 20px;
+                font-size: 16px;
+                color: #fff;
+                background-color: #543310;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: background-color 0.3s;
+            }
+            
+            .product-button:hover {
+                background-color: #EAC696;
+            }
+        }
+    }
+    
+    .product-card:hover {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transform: scale(1.1);
+        /*Aumenta el tamaño al 120%*/
+        filter: brightness(0.9);
+        /*Oscurece un poco la imagen*/
+        -webkit-transform: scale(1.1);
+        -moz-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+        -o-transform: scale(1.1);
+
+        .overlay {
+            opacity: 1; /* Hace visible el overlay */
+            visibility: visible; /* Lo muestra visualmente */
+        }
+    }
+}
+
+
+
+        /*Tabla*/
+        .schedule-table { 
+            background: (90deg, #C8AE7D 0%, #543310 100%);
+            color: white;
+            border-radius:30px;
+            border-collapse: collapse;
+            height: 320px;
+            margin: auto;
+            max-width: 400px;
+            padding:5px;
+            width: 100%;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            animation: float 5s infinite;
+        }
+
+        th { /*Letras inicio tabla*/
+            color:#ffffff;
+            background-color: #543310;
+            border: 1px solid rgba(148, 187, 233, 0.5);
+            border-bottom:4px solid #9ea7af;
+            border-right: 1px solid #343a45;
+            font-size:22px;
+            font-weight: 100;
+            padding:24px;
+            text-align:center;
+            text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+            vertical-align:middle;
+        }
+        
+        th:first-child {
+            border-top-left-radius:30px;
+        }
+        
+        th:last-child {
+            border-top-right-radius:30px;
+            border-right:none;
+        }
+        
+        tr {
+            border-top: 1px solid #C1C3D1;
+            border-bottom: 1px solid #C1C3D1;
+            color:#666B85;
+            font-size:16px;
+            font-weight:normal;
+            text-shadow: 0 1px 1px rgba(256, 256, 256, 0.1);
+        }
+        
+        tr:hover td { /*Efecto martes, jueves, s y d*/
+            background:#543310; 
+            color:#ffffff;
+            border-top: 1px solid rgb(199, 183, 129);
+        }
+        
+        tr:first-child {
+            border-top:none;
+        }
+        
+        tr:last-child {
+            border-bottom:none;
+        }
+        
+        tr:nth-child(odd) td { /*Fondo lunes, miercoles, viernes*/
+            background:#EBEBEB;
+        }
+        
+        tr:nth-child(odd):hover td { /*Efecto lunes, miercoles, viernes*/
+            background:#C8AE7D;
+            border-top: 1px solid rgb(224, 200, 134);
+            color: black;
+        }
+        
+        tr:last-child td:first-child {
+            border-bottom-left-radius:30px;
+        }
+        
+        tr:last-child td:last-child {
+            border-bottom-right-radius:30px;
+        }
+        
+        td { /*Columnas abajo*/
+            background:#FFFFFF;
+            padding:10px;
+            text-align:left;
+            vertical-align:middle;
+            font-weight:300;
+            font-size:18px;
+            text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+            border-right: 1px solid #C1C3D1;
+            color: #333;       
+            border: 1px solid rgba(148, 187, 233, 0.5);
+        
+        }
+        
+        td:last-child {
+            border-right: 0px;
+        }
+        
+        th.text-left {
+            text-align: left;
+        }
+        
+        th.text-center {
+            text-align: center;
+        }
+        
+        th.text-right {
+            text-align: right;
+        }
+        
+        td.text-left {
+            text-align: left;
+        }
+        
+        td.text-center {
+            text-align: center;
+        }
+        
+        td.text-right {
+            text-align: right;
+        }
+
+    /*FOOTER*/
+
+        footer {
+            width: 100%;
+            background-color: #765827;
+            padding: 10px;
+            background: linear-gradient(348deg, rgba(234,198,150) 0%, hsl(41, 97%, 14%) 100%);
+            text-align: center;
+            margin-top: 2em;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-secciones,
+        .footer-contacto {
+            text-align: left;
+        }
+
+        .footer-secciones h3,
+        .footer-contacto h3 {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .footer-secciones ul,
+        .footer-contacto ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-secciones li,
+        .footer-contacto li {
+            margin-bottom: 5px;
+        }
+
+        .derechos{
+            text-align: center;
+            margin-top: 30px;
+        }
+
+    </style>
 </head>
+
 <body>
-  <main>
-    <h1>Grupo 4 – Grupo compuesto por A.David Bouzas Rendal y Adrián Amorín Carrera</h1>
-    <h2>Proyecto Web · 1º DAM</h2>
-    <p>IES Armando Cotarelo Valledor · Lenguajes de Marcas</p>
-  </main>
+
+    <!-- Barra de navegación -->
+    <nav>
+        <a href="index.html" class="logo">Le Nid de Café</a>
+        <div class="menu">
+            <a href="index.html">Inicio</a>
+            <a href="./Sites/productos.html">Productos</a>
+            <a href="./Sites/accesorios.html">Accesorios</a>
+            <a href="./Sites/ofertas.html">Ofertas</a>
+            <a href="./Sites/formulario.html">Contacto</a>
+            <a href="./Sites/login.html">Iniciar sesión</a>
+        </div>
+    </nav>
+
+
+    <!-- Sección Hero -->
+    <section class="hero">
+        <h1>Bienvenido a Le Nid de Café</h1>
+        <h2>El refugio del café de especialidad</h2>
+        <p>Descubre nuestra selección de cafés, infusiones y accesorios para disfrutar de cada momento con aroma y sabor únicos.</p>
+    </section>
+
+    <!-- Sección Categorías -->
+    <section class="categories">
+        <div class="category">
+            <img src="https://www.comprarlotes.com/uploads/users/user4245/gallery/9021_beneficios-del-cafe-en-grano.jpg" alt="Café en grano">
+            <h3>Cafés en Grano</h3>
+        </div>
+        <div class="category">
+            <img src="https://doctoragua.es/wp-content/uploads/2020/11/AdobeStock_272955346-scaled.jpeg" alt="Infusiones">
+            <h3>Infusiones & Tés</h3>
+        </div>
+        <div class="category">
+            <img src="https://img.freepik.com/foto-gratis/naturaleza-muerta-herramientas-cafe_23-2149371282.jpg?semt=ais_hybrid&w=740&q=80" alt="Accesorios">
+            <h3>Accesorios</h3>
+        </div>
+    </section>
+
+
+        <!--PRODUCTOS-->
+        <div class="mt-5">
+            <h1 class="d-flex justify-content-center align-items-center" id="tablas">Los más populares</h1>
+            <div class="products">
+                <div class="product-card">
+                    <img src="/Img/kenya.avif" alt="Café arábica Kenya">
+                    <h3>Café arábica Kenya</h3>
+                    <p class="price">12,90 €</p>
+                    <div class="overlay">
+                        <h3>Café arábica Kenya</h3>
+                        <button class="overlay-button">Agregar al carrito</button>
+
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="/Img/col.avif" alt="Café arábica Colombia">
+                    <h3>Café arábica Colombia</h3>
+                    <p class="price">10,00 €</p>
+                    <div class="overlay">
+                        <h3>Café arábica Colombia</h3>
+                        <button class="overlay-button">Agregar al carrito</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="/Img/india.webp" alt="Café robusta India">
+                    <h3>Café robusta India</h3>
+                    <p class="price">14.50 €</p>
+                    <div class="overlay">
+                        <h3>Café robusta India</h3>
+                        <button class="overlay-button">Agregar al carrito</button>
+                        <button class="product-button" onclick="location.href='Sites/productos.html'">Ver
+                            Producto</button>
+                    </div>
+                </div>
+
+                    <div class="product-card">
+                        <img src="/Img/mezcla.jpg" alt="Café mezcla robusta y arábica">
+                        <h3>Café mezcla robusta y arábica</h3>
+                        <p class="price">15,00 €</p>
+                        <div class="overlay">
+                            <h3>Café mezcla robusta y arábica</h3>
+                            <button class="overlay-button">Agregar al carrito</button>
+                        </div>
+                </div>
+            </div>
+        </div>    
+
+
+    <!-- Horario -->
+    <div class="my-5">
+        <h1 class="d-flex justify-content-center align-items-center" id="tablas">Horario apertura</h1>
+            <table class="schedule-table">
+                <thead>
+                  <tr>
+                    <th class="text-left">Día</th>
+                        <th class="text-left">Horario</th>
+                  </tr>
+                </thead>
+                <tbody class="table-hover">
+                    <tr>
+                        <td class="text-left">Lunes</t>
+                        <td class="text-left">9:00 a 20:00</td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">Martes</td>
+                        <td class="text-left">9:00 a 14:00</td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">Miercoles</td>
+                        <td class="text-left">9:00 a 20:00</td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">Jueves</td>
+                        <td class="text-left">9:00 a 20:00</td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">Viernes</td>
+                        <td class="text-left">9:00 a 20:00</td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">Sábado y Domingo</td>
+                        <td class="text-left">Cerrado</td>
+                    </tr>       
+                </tbody>
+            </table>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+
+            <div class="footer-container">
+                <div class="footer-secciones">
+                    <h3>Secciones</h3>
+                    <ul>
+                        <li><a href="#">Inicio</a></li>
+                        <li><a href="./Sites/productos.html">Productos</a></li>
+                        <li><a href="#">Accesorios</a></li>
+                        <li><a href="#">Ofertas</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contacto">
+                    <h3>Contacto</h3>
+                    <ul>
+                        <li>Telefono contacto: 986-203-475</li>
+                        <li>Correo contacto: <a href="mailto:lenidecafe@gmail.com">leniddecafe@gmail.com</a></li>
+                        <li><a href="./Sites/formulario.html">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-secciones">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li>Términos y Cóndiciones</li>
+                        <li>Política de Privacidad</li>
+                    </ul>
+                </div>
+            </div>
+
+        <div class="derechos"></div>
+        <p>Le Nid de Café • © 2025 • Todos los derechos reservados</p>
+    </footer>
+
 </body>
 </html>
