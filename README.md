@@ -11,6 +11,15 @@ El objetivo es que los clientes, tanto particulares como empresas, puedan ver nu
 *David: adbr222*
 *Adrián: AdriAC6*
 
+## 🗺️ Mapa del Sitio
+- **index.html** → Página principal (inicio)
+- **css/** → Carpeta que contiene las hojas de estilo (CSS)
+- **img/** → Carpeta con las imágenes del sitio
+- **Sites/**
+  - **login.html** → Página de inicio de sesión
+  - **ofertas.html** → Página de ofertas o promociones
+  - **productos.html** → Página del catálogo de productos
+
 ## Recursos usados 🛠️
 - HTML5
 - Tipografía: *Playfair Display* y *Open Sans*  
