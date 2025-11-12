@@ -19,6 +19,7 @@ El objetivo es que los clientes, tanto particulares como empresas, puedan ver nu
   - **login.html** → Página de inicio de sesión
   - **ofertas.html** → Página de ofertas o promociones
   - **productos.html** → Página del catálogo de productos
+  - **formulario.html** → Página del Formulario
 
 ## Recursos usados 🛠️
 - HTML5
