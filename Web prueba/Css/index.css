@@ -1,0 +1,191 @@
+body {
+    margin: 0;
+    font-family: "Playfair Display", serif;
+    background-color: #EAC696; /* Crema Suave */
+    color: #543310; /* Café Intenso */
+}
+
+/* Barra de navegación */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #765827; /* Marrón Tostado */
+    padding: 1em 2em;
+}
+
+nav .logo {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #EAC696;
+    text-decoration: none;
+}
+
+nav .menu a {
+    margin-left: 1.5em;
+    text-decoration: none;
+    color: #EAC696;
+    font-weight: 600;
+}
+
+nav .menu a:hover {
+    color: #C8AE7D; /* Caramelo Claro */
+}
+
+/* Sección hero */
+.hero {
+    text-align: center;
+    padding: 4em 1em;
+}
+
+.hero h1 {
+    font-size: 3em;
+    margin: 0.2em 0;
+}
+
+.hero h2 {
+    font-size: 1.8em;
+    color: #765827;
+    font-weight: 400;
+    margin: 0.2em 0;
+}
+
+.hero p {
+    font-size: 1.2em;
+    color: #543310;
+    max-width: 600px;
+    margin: 1em auto 0;
+}
+
+/* Sección categorías */
+.categories {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2em;
+    padding: 2em 1em;
+}
+
+.category {
+    width: 200px;
+    text-align: center;
+}
+
+.category img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+
+.product-card { /*Etiquetas productos*/
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 200px;
+    height: 300px;
+    text-align: center;
+    padding: 15px;
+    transition: box-shadow 0.3s ease;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 15px;
+
+img {
+    max-width: 100%;
+    border-radius: 8px;
+    height: 168px;
+    width: 168px;
+}
+
+h3 {
+    font-size: 16px;
+    margin: 10px 0;
+    color: #333;
+}
+
+.price { /* Color texto precio */
+    font-size: 18px;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Fondo semi-transparente */
+    display: flex;
+    flex-direction: column; /* Alinea los elementos en columna */
+    justify-content: center; /* Centra verticalmente */
+    align-items: center; /* Centra horizontalmente */
+    opacity: 0; /* Oculto por defecto */
+    visibility: hidden; /* Evita que ocupe espacio */
+    transition: opacity 0.3s ease-in-out, visibility 0.3s;
+    backdrop-filter: blur(4px); /* Difumina el fondo */
+    border-radius: 8px;
+
+    h3 {
+        color: #fff;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+    .overlay-button {
+        padding: 10px 20px;
+        font-size: 16px;
+        color: #fff;
+        background-color: #543310;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+    
+    .overlay-button:hover { /*Efecto del botón del producto*/
+        background-color: #EAC696;
+    }
+
+    .product-button { /*Color botón ver producto*/
+        margin-top: 10px;
+        padding: 10px 20px;
+        font-size: 16px;
+        color: #fff;
+        background-color: #543310;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+    
+    .product-button:hover {
+        background-color: #EAC696;
+    }
+}
+}
+
+.product-card:hover {
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+transform: scale(1.1);
+/*Aumenta el tamaño al 120%*/
+filter: brightness(0.9);
+/*Oscurece un poco la imagen*/
+-webkit-transform: scale(1.1);
+-moz-transform: scale(1.1);
+-ms-transform: scale(1.1);
+-o-transform: scale(1.1);
+
+.overlay {
+    opacity: 1; /* Hace visible el overlay */
+    visibility: visible; /* Lo muestra visualmente */
+}
+}
+}
