@@ -5,128 +5,69 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Le Nid de Café</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: "Playfair Display", serif;
-            background-color: #EAC696; /* Crema Suave */
-            color: #543310; /* Café Intenso */
-        }
+    <link rel="stylesheet" href="/CSS/index.css">
+    <link rel="stylesheet" href="/CSS/header.css">
+    <link rel="stylesheet" href="/CSS/footer.css">
 
-        /* Barra de navegación */
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #765827; /* Marrón Tostado */
-            padding: 1em 2em;
-        }
-
-        nav .logo {
-            font-size: 1.8em;
-            font-weight: bold;
-            color: #EAC696;
-            text-decoration: none;
-        }
-
-        nav .menu a {
-            margin-left: 1.5em;
-            text-decoration: none;
-            color: #EAC696;
-            font-weight: 600;
-        }
-
-        nav .menu a:hover {
-            color: #C8AE7D; /* Caramelo Claro */
-        }
-
-        /* Sección hero */
-        .hero {
-            text-align: center;
-            padding: 4em 1em;
-        }
-
-        .hero h1 {
-            font-size: 3em;
-            margin: 0.2em 0;
-        }
-
-        .hero h2 {
-            font-size: 1.8em;
-            color: #765827;
-            font-weight: 400;
-            margin: 0.2em 0;
-        }
-
-        .hero p {
-            font-size: 1.2em;
-            color: #543310;
-            max-width: 600px;
-            margin: 1em auto 0;
-        }
-
-        /* Sección categorías */
-        .categories {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 2em;
-            padding: 2em 1em;
-        }
-
-        .category {
-            width: 200px;
-            text-align: center;
-        }
-
-        .category img {
-            width: 100%;
-            border-radius: 8px;
-        }
-
-        /* Footer */
-        footer {
-            background-color: #765827;
-            color: #EAC696;
-            text-align: center;
-            padding: 2em 1em;
-            margin-top: 2em;
-        }
-    </style>
+        <link rel="stylesheet" href="/CSS/producto.css">
 </head>
 
-<footer>
+<body>
+    <!-- CABECERA-->
+    <header class="main-header">
+        <nav>
+            <!-- Dentro de <nav> -->
+            <a href="index.html" class="logo">
+            <img src="/Img/logo_final.png" alt="Logo Le Nid de Café">
+            <span>Le Nid de Café</span>
+            </a>
 
-    <div class="footer-container">
-        <div class="footer-secciones">
-            <h3>Secciones</h3>
-            <ul>
-                <li><a href="#">Inicio</a></li>
-                <li><a href="./cafes.html">Cafés</a></li>
-                <li><a href="#">Accesorios</a></li>
-                <li><a href="#">Infusiones</a></li>
-                <li><a href="#">Ofertas</a></li>
-            </ul>
-        </div>
-        <div class="footer-contacto">
-            <h3>Contacto</h3>
-            <ul>
-                <li>Telefono contacto: 986-203-475</li>
-                <li>Correo contacto: <a href="mailto:lenidecafe@gmail.com">leniddecafe@gmail.com</a></li>
-                <li><a href="formulario.html">Contacto</a></li>
-            </ul>
-        </div>
-        <div class="footer-secciones">
-            <h3>Legal</h3>
-            <ul>
-                <li>Términos y Cóndiciones</li>
-                <li>Política de Privacidad</li>
-            </ul>
-        </div>
-    </div>
 
-<div class="derechos"></div>
-<p>Le Nid de Café • © 2025 • Todos los derechos reservados</p>
+            <!-- Menú de Navegación-->
+            <ul class="menu">
+                <li><a href="/index.html" class="active">Inicio</a></li>
+                <li><a href="/Sites/productos.html">Productos</a></li>
+                <li><a href="/Sites/accesorios.html">Accesorios</a></li>
+                <li><a href="/Sites/ofertas.html">Ofertas</a></li>
+                <li><a href="/Sites/formulario.html">Contacto</a></li>
+                <!-- Botón Login -->
+                <li><a href="/Sites/login.html" class="btn-login">Iniciar sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Footer -->
+    <footer>
+
+        <div class="footer-container">
+            <div class="footer-secciones">
+                <h3>Secciones</h3>
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="./Sites/productos.html">Productos</a></li>
+                    <li><a href="#">Accesorios</a></li>
+                    <li><a href="#">Ofertas</a></li>
+                </ul>
+            </div>
+            <div class="footer-contacto">
+                <h3>Contacto</h3>
+                <ul>
+                    <li>Telefono contacto: 986-203-475</li>
+                    <li>Correo contacto: <a href="mailto:lenidecafe@gmail.com">leniddecafe@gmail.com</a></li>
+                    <li><a href="./Sites/formulario.html">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-secciones">
+                <h3>Legal</h3>
+                <ul>
+                    <li>Términos y Cóndiciones</li>
+                    <li>Política de Privacidad</li>
+                </ul>
+            </div>
+        </div>
+
+    <div class="derechos"></div>
+    <p>Le Nid de Café • © 2025 • Todos los derechos reservados</p>
 </footer>
 
 </html>

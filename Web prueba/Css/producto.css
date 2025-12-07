@@ -1,9 +1,3 @@
-main {
-    display: flex;
-    justify-content: center;
-    padding: 20px 0px;
-}
-
 .product {
     position: relative;
     width: 1000px;
@@ -178,26 +172,4 @@ main {
 
 .btn-compra:hover::before {
     box-shadow: inset 0 0 0 10em rgba(234,198,150);
-}
-
-@media (max-width: 1100px){
-    .product{
-        flex-direction: column;
-        width: 90%;
-        margin: 5vh 0;
-    }
-    .product-img{
-        width: 100%;
-        height: 300px;
-    }
-    .product-listing{
-        width: 100%;
-        min-height: auto;
-    }
-    .name,.price{
-        font-size: 50px;
-    }
-    .info{
-        font: 16px;
-    }
 }
