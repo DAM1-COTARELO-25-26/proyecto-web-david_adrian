@@ -1,6 +1,3 @@
-/* ESTILOS ESPECÍFICOS: PRODUCTOS Y ACCESORIOS */
-
-/* --- TÍTULO DE LA PÁGINA --- */
 .page-title {
     text-align: center;
     padding: 50px 20px;
@@ -19,10 +16,9 @@
     font-size: 1.1rem;
 }
 
-/* --- REJILLA PRINCIPAL (GRID) --- */
+/* --- Grid --- */
 .products-grid-container {
     display: grid;
-    /* Responsive automático: crea columnas de mínimo 280px */
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 40px; /* Espacio entre tarjetas */
     padding: 40px 5%; /* Márgenes laterales */
@@ -30,7 +26,7 @@
     margin: 0 auto; /* Centrado en pantallas gigantes */
 }
 
-/* --- TARJETA DE PRODUCTO --- */
+/* --- Tarjeta de producto --- */
 .product-card-full {
     background: white;
     border-radius: 12px;
@@ -44,11 +40,11 @@
 
 /* Efecto al pasar el ratón por la tarjeta */
 .product-card-full:hover {
-    transform: translateY(-5px); /* Se levanta un poco */
+    transform: translateY(-5px);
     box-shadow: 0 15px 30px rgba(0,0,0,0.15);
 }
 
-/* --- IMAGEN DEL PRODUCTO --- */
+/* --- Imagen del producto --- */
 .card-image {
     position: relative;
     height: 260px; /* Altura fija para la zona de imagen */
@@ -63,12 +59,12 @@
 .card-image img {
     width: 100%;
     height: 100%;
-    object-fit: contain; /* ¡IMPORTANTE! Muestra la imagen entera sin recortarla */
+    object-fit: contain;
     transition: transform 0.5s ease;
 }
 
 .product-card-full:hover .card-image img {
-    transform: scale(1.05); /* Pequeño zoom elegante */
+    transform: scale(1.05);
 }
 
 /* Etiqueta "Nuevo" */
@@ -86,7 +82,7 @@
     z-index: 2;
 }
 
-/* --- DETALLES Y TEXTOS --- */
+/* --- Detalles --- */
 .card-details {
     padding: 25px; /* Espacio interior generoso */
     display: flex;
@@ -102,7 +98,7 @@
 }
 
 .rating {
-    color: #ffc107; /* Color amarillo estrella */
+    color: #ffc107;
     font-size: 0.9rem;
     margin-bottom: 15px;
 }
@@ -112,16 +108,16 @@
     color: #666;
     line-height: 1.6;
     margin-bottom: 25px;
-    flex-grow: 1; /* Empuja el precio hacia abajo */
+    flex-grow: 1;
 }
 
-/* --- PRECIO Y BOTÓN --- */
+/* --- Precio y botón --- */
 .price-action {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: auto; /* Se pega siempre al fondo de la tarjeta */
-    border-top: 1px solid #eee; /* Línea divisoria sutil */
+    margin-top: auto; 
+    border-top: 1px solid #eee; 
     padding-top: 20px;
 }
 
@@ -136,7 +132,7 @@
     color: white;
     border: none;
     padding: 10px 25px;
-    border-radius: 30px; /* Botón redondeado "tipo píldora" */
+    border-radius: 30px;
     cursor: pointer;
     font-weight: 600;
     font-size: 0.95rem;
@@ -144,6 +140,6 @@
 }
 
 .btn-buy:hover {
-    background-color: #d4a373; /* Cambio de color al pasar ratón */
+    background-color: #d4a373;
     transform: scale(1.05);
 }
