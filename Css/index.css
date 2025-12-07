@@ -52,6 +52,8 @@ nav .menu a:hover {
     margin-bottom: 15px;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Sombra para leer mejor */
     font-family: 'Georgia', serif; /* Toque elegante */
+    justify-content: center; 
+    align-items: center;
 }
 
 .hero h2 {
@@ -68,6 +70,14 @@ nav .menu a:hover {
     line-height: 1.6;
 }
 
+#tablas {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
 /* --- SECCIÓN CATEGORÍAS --- */
 .categories {
     display: flex;
@@ -75,7 +85,7 @@ nav .menu a:hover {
     gap: 40px; /* Espacio entre tarjetas */
     padding: 0 20px;
     margin-bottom: 60px;
-    flex-wrap: wrap; /* Para que baje en móvil */
+
 }
 
 .category {
@@ -116,12 +126,6 @@ nav .menu a:hover {
     z-index: 1;
 }
 
-/* Ajuste Móvil */
-@media (max-width: 768px) {
-    .hero h1 { font-size: 2.5rem; }
-    .hero h2 { font-size: 1.4rem; }
-    .categories { gap: 20px; }
-}
 
 
 /* Sección categorías */

@@ -1,175 +1,149 @@
-.product {
+/* ESTILOS ESPECÍFICOS: PRODUCTOS Y ACCESORIOS */
+
+/* --- TÍTULO DE LA PÁGINA --- */
+.page-title {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #fdfbf7; /* Fondo suave diferente al body */
+    margin-top: 20px; /* Separación del header */
+}
+
+.page-title h1 {
+    font-size: 2.5rem;
+    color: #2c1a12;
+    margin-bottom: 10px;
+}
+
+.page-title p {
+    color: #666;
+    font-size: 1.1rem;
+}
+
+/* --- REJILLA PRINCIPAL (GRID) --- */
+.products-grid-container {
+    display: grid;
+    /* Responsive automático: crea columnas de mínimo 280px */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px; /* Espacio entre tarjetas */
+    padding: 40px 5%; /* Márgenes laterales */
+    max-width: 1400px;
+    margin: 0 auto; /* Centrado en pantallas gigantes */
+}
+
+/* --- TARJETA DE PRODUCTO --- */
+.product-card-full {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08); /* Sombra suave */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column; /* Organiza imagen arriba, texto abajo */
+    height: 100%; /* Para que todas las tarjetas midan lo mismo */
+}
+
+/* Efecto al pasar el ratón por la tarjeta */
+.product-card-full:hover {
+    transform: translateY(-5px); /* Se levanta un poco */
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+/* --- IMAGEN DEL PRODUCTO --- */
+.card-image {
     position: relative;
-    width: 1000px;
-    min-width: 350px;
-    min-height: 500px;
-    height: auto;
+    height: 260px; /* Altura fija para la zona de imagen */
+    background-color: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 15px; /* Padding para que la imagen respire */
+    overflow: hidden;
 }
 
-.product-img{
-    width: 40%;
-    height: 500px;
-    background: #fff;
-    position: relative;
-    opacity: 0;
-    transform: translateY(-50px);
-    animation: fade-in 1s forwards 1;
-    margin-right: 60px;
-}
-
-.product-img img{
+.card-image img {
     width: 100%;
     height: 100%;
-    object-fit: contain;
-    user-select: none;
+    object-fit: contain; /* ¡IMPORTANTE! Muestra la imagen entera sin recortarla */
+    transition: transform 0.5s ease;
 }
 
-.tag{
+.product-card-full:hover .card-image img {
+    transform: scale(1.05); /* Pequeño zoom elegante */
+}
+
+/* Etiqueta "Nuevo" */
+.tag-new {
     position: absolute;
-    top: 20px;
-    left: -10px;
-    transform-origin: left;
-    opacity: 0;
-    transform: rotate(-90deg);
-    text-transform: capitalize;
-    color: black;
-    padding: 5px 10px;
-    width: 100px;
-    font-size: 18px;
-    text-align: center;
-    background: #765827;
-    user-select: none;
-    animation: tag .5s 1s forwards 1;
+    top: 15px;
+    right: 15px;
+    background-color: #d4a373;
+    color: white;
+    padding: 5px 12px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    border-radius: 20px;
+    text-transform: uppercase;
+    z-index: 2;
 }
 
-@keyframes tag{
-    100%{
-        opacity: 1;
-        transform: rotate(-20deg);
-    }
-}
-
-.product-listing{
-    width: 60%;
-    min-height: 500px;
-    height: auto;
-    background: #543310;
-    padding: 40px;
+/* --- DETALLES Y TEXTOS --- */
+.card-details {
+    padding: 25px; /* Espacio interior generoso */
     display: flex;
-    justify-content: center;
-    color: black;
-    opacity: 0;
-    transform: translateY(50px);
-    animation: fade-in 1s forwards 1;
-    
+    flex-direction: column;
+    flex-grow: 1; /* Ocupa todo el espacio sobrante */
 }
 
-@keyframes fade-in{
-    100%{
-        opacity: 1;
-        transform: translateY(0);
-    }
+.card-details h2 {
+    font-size: 1.4rem;
+    color: #2c1a12;
+    margin-bottom: 10px;
+    line-height: 1.3;
 }
 
-.name{
-    font-family: 'dosis';
-    font-size: 70px;
-    text-transform: capitalize;
+.rating {
+    color: #ffc107; /* Color amarillo estrella */
+    font-size: 0.9rem;
+    margin-bottom: 15px;
 }
 
-.info{
-    font-size: 18px;
-    line-height: 30px;
-    margin: 50px 0;
+.description {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    flex-grow: 1; /* Empuja el precio hacia abajo */
 }
 
-.price{
-    font-size: 70px;
-    font-weight: 100;
-    margin-bottom: 20px;
-}
-
-.btn-and-rating-box{
-    width: 100%;
+/* --- PRECIO Y BOTÓN --- */
+.price-action {
     display: flex;
     justify-content: space-between;
-}
-
-.rating{
-    width: fit-content;
-    display: flex;
-    justify-content: center;
     align-items: center;
+    margin-top: auto; /* Se pega siempre al fondo de la tarjeta */
+    border-top: 1px solid #eee; /* Línea divisoria sutil */
+    padding-top: 20px;
 }
 
-.rating img{
-    width: 20px;
-    height: 20px;
-    margin: 0 2px;
-
+.price-action .price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #2c1a12;
 }
 
-.btn-compra {
-    background: transparent;
-    position: relative;
-    padding: 5px 15px;
-    display: flex;
-    align-items: center;
-    font-size: 17px;
-    font-weight: 600;
-    text-decoration: none;
+.btn-buy {
+    background-color: #2c1a12;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 30px; /* Botón redondeado "tipo píldora" */
     cursor: pointer;
-    border: 1px solid rgba(234,198,150);
-    border-radius: 25px;
-    outline: none;
-    overflow: hidden;
-    color: rgba(234,198,150);
-    transition: color 0.3s 0.1s ease-out;
-    text-align: center;
-    -webkit-transition: color 0.3s 0.1s ease-out;
-    -moz-transition: color 0.3s 0.1s ease-out;
-    -ms-transition: color 0.3s 0.1s ease-out;
-    -o-transition: color 0.3s 0.1s ease-out;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: background 0.3s, transform 0.2s;
 }
 
-.btn-compra span {
-    margin: 10px;
-}
-
-.btn-compra::before {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: auto;
-    content: '';
-    border-radius: 50%;
-    display: block;
-    width: 20em;
-    height: 20em;
-    left: -5em;
-    text-align: center;
-    transition: box-shadow 0.5s ease-out;
-    z-index: -1;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
-    -webkit-transition: box-shadow 0.5s ease-out;
-    -moz-transition: box-shadow 0.5s ease-out;
-    -ms-transition: box-shadow 0.5s ease-out;
-    -o-transition: box-shadow 0.5s ease-out;
-}
-
-.btn-compra:hover {
-    color: #fff;
-    border: 1px solid rgba(234,198,150);
-}
-
-.btn-compra:hover::before {
-    box-shadow: inset 0 0 0 10em rgba(234,198,150);
+.btn-buy:hover {
+    background-color: #d4a373; /* Cambio de color al pasar ratón */
+    transform: scale(1.05);
 }

@@ -53,8 +53,13 @@ nav {
 /* --- MENÚ DE NAVEGACIÓN (.menu) --- */
 .menu {
     display: flex;
-    gap: 25px; /* Espacio entre enlaces */
-    list-style: none; /* Quita los puntos si usas <ul> */
+    gap: 20px; /* Espacio entre enlaces */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    
+    flex-shrink: 1;
 }
 
 .menu a {
@@ -74,45 +79,23 @@ nav {
     background-color: #d7ccc8; /* Fondo crema al pasar el ratón */
 }
 
-/* Botón de Iniciar Sesión destacado (opcional) */
+/* --- BOTÓN INICIAR SESIÓN (Estilo especial) --- */
 .menu a[href*="login"] {
     border: 1px solid #f4e4d4;
-    display: inline-block;
+    padding: 8px 20px;    
+    border-radius: 25px;   
+    margin-left: 10px;     
+    transition: all 0.3s ease;
+    white-space: nowrap; 
+    display: inline-block; 
+}
+.menu a[href*="login"]::after {
+    display: none; 
 }
 
-/* --- RESPONSIVE (MÓVIL) --- */
-@media (max-width: 768px) {
-    nav {
-        height: auto; /* Altura automática para que quepa el menú desplegado */
-        padding: 1rem 5%;
-        flex-direction: column; /* Apila logo y menú verticalmente */
-    }
-
-    /* Ajuste del logo en móvil */
-    .logo {
-        font-size: 1.2rem;
-        gap: 10px;
-    }
-    .logo img {
-        height: 40px; /* Logo un poco más pequeño en móvil */
-    }
-
-    .menu {
-        flex-direction: column; /* Enlaces uno debajo del otro */
-        align-items: center;
-        gap: 15px;
-        margin-top: 15px;
-        width: 100%;
-    }
-    
-    .menu a {
-        display: block;
-        width: 100%;
-        text-align: center;
-    }
-    
-    /* Ajustamos el padding del body para que no se coma el contenido en móvil */
-    body {
-        padding-top: 160px; /* Aumentado un poco para asegurar espacio */
-    }
+/* Hover del botón login */
+.menu a[href*="login"]:hover {
+    background-color: #f4e4d4;
+    color: #2c1a12; 
+    transform: translateY(-2px); 
 }

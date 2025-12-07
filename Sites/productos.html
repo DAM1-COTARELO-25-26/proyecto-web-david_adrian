@@ -8,8 +8,9 @@
     <link rel="stylesheet" href="/CSS/index.css">
     <link rel="stylesheet" href="/CSS/header.css">
     <link rel="stylesheet" href="/CSS/footer.css">
+    <link rel="stylesheet" href="/CSS/producto.css">
 
-        <link rel="stylesheet" href="/CSS/producto.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
 <body>
@@ -17,7 +18,7 @@
     <header class="main-header">
         <nav>
             <!-- Dentro de <nav> -->
-            <a href="index.html" class="logo">
+            <a href="../index.html" class="logo">
             <img src="/Img/logo_final.png" alt="Logo Le Nid de Café">
             <span>Le Nid de Café</span>
             </a>
@@ -36,40 +37,112 @@
         </nav>
     </header>
 
+    <!-- Título de la Sección -->
+    <section class="page-title">
+        <h1>Nuestros Cafés</h1>
+        <p>Selección exclusiva de granos de todo el mundo</p>
+    </section>
 
-    <main>
-        <div class="product">
-            <div class="product-img">
-                <img src="/Img/india.webp" alt="Café robsta India">
-                <span class="tag">new</span>
+    <!-- REJILLA DE PRODUCTOS -->
+    <main class="products-grid-container">
+        
+        <!-- Producto 1: India  -->
+        <div class="product-card-full">
+            <div class="card-image">
+                <img src="../Img/india.webp" alt="Café Robusta India">
+                <span class="tag-new">Nuevo</span>
             </div>
-            <div class="product-listing">
-                <div class="content">
-                    <h1 class="name">Café robusta India</h1>
-                    <p class="info"> Cultivado en Harley Estate (Manjarabad, Karnataka), un histórico cafetal familiar (desde 1860), este blend combina Arábica Selection 9 y Robusta premium Kaapi Royale, con cultivo bajo sombra y polícultivo.
-
-                        Ofrece una taza potente, dulce y compleja que funde lo mejor de ambos mundos.
-                        
-                    </p>
-                    <p class="price">14,50 €</p>
-                    <div class="btn-and-rating-box">
-                        <div class="rating">
-                            <img src="https://github.com/kunaal438/product-page/blob/master/img/star.png?raw=true"
-                                alt="">
-                            <img src="https://github.com/kunaal438/product-page/blob/master/img/star.png?raw=true"
-                                alt="">
-                            <img src="https://github.com/kunaal438/product-page/blob/master/img/star.png?raw=true"
-                                alt="">
-                            <img src="https://github.com/kunaal438/product-page/blob/master/img/star.png?raw=true"
-                                alt="">
-                            <img src="https://github.com/kunaal438/product-page/blob/master/img/star%20stroke.png?raw=true"
-                                alt="">
-                        </div>
-                        <button class="btn-compra">Comprar</button>
-                    </div>
+            <div class="card-details">
+                <h2>Café Robusta India</h2>
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i> 
+                </div>
+                <p class="description">
+                    Cultivado en Harley Estate (Karnataka), este blend combina Arábica y Robusta premium Kaapi Royale. Potente, dulce y complejo.
+                </p>
+                <div class="price-action">
+                    <span class="price">14,50 €</span>
+                    <button class="btn-buy">Añadir</button>
                 </div>
             </div>
         </div>
+
+        <!-- Producto 2: Kenya -->
+        <div class="product-card-full">
+            <div class="card-image">
+                <img src="../Img/kenya.avif" alt="Café Kenya">
+            </div>
+            <div class="card-details">
+                <h2>Café Arábica Kenya</h2>
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p class="description">
+                    Café de altura con notas cítricas y cuerpo medio. Ideal para quienes buscan acidez brillante y aroma floral.
+                </p>
+                <div class="price-action">
+                    <span class="price">12,90 €</span>
+                    <button class="btn-buy">Añadir</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Producto 3: Colombia -->
+        <div class="product-card-full">
+            <div class="card-image">
+                <img src="../Img/colombia.avif" alt="Café Colombia">
+            </div>
+            <div class="card-details">
+                <h2>Café Colombia Supremo</h2>
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <p class="description">
+                    El clásico mundial. Sabor suave, balanceado y con notas a caramelo y nuez. Perfecto para el día a día.
+                </p>
+                <div class="price-action">
+                    <span class="price">10,00 €</span>
+                    <button class="btn-buy">Añadir</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Producto 4: Mezcla -->
+        <div class="product-card-full">
+            <div class="card-image">
+                <img src="../Img/mezcla.jpg" alt="Café Mezcla">
+            </div>
+            <div class="card-details">
+                <h2>Mezcla Especial Casa</h2>
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+                <p class="description">
+                    Nuestra fórmula secreta. 70% Arábica y 30% Robusta para conseguir una crema espesa y sabor intenso.
+                </p>
+                <div class="price-action">
+                    <span class="price">15,00 €</span>
+                    <button class="btn-buy">Añadir</button>
+                </div>
+            </div>
+        </div>
+
     </main>
 
 </body>
