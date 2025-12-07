@@ -5,159 +5,74 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Le Nid de Café</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: "Playfair Display", serif;
-            background-color: #EAC696; /* Crema Suave */
-            color: #543310; /* Café Intenso */
-        }
+    <link rel="stylesheet" href="/CSS/index.css">
+    <link rel="stylesheet" href="/CSS/header.css">
+    <link rel="stylesheet" href="/CSS/footer.css">
+    <link rel="stylesheet" href="/CSS/producto.css">
+    <link rel="stylesheet" href="/CSS/ofertas.css">
 
-        /* Barra de navegación */
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #765827; /* Marrón Tostado */
-            padding: 1em 2em;
-        }
-
-        nav .logo {
-            font-size: 1.8em;
-            font-weight: bold;
-            color: #EAC696;
-            text-decoration: none;
-        }
-
-        nav .menu a {
-            margin-left: 1.5em;
-            text-decoration: none;
-            color: #EAC696;
-            font-weight: 600;
-        }
-
-        nav .menu a:hover {
-            color: #C8AE7D; /* Caramelo Claro */
-        }
-
-        /* Sección hero */
-        .hero {
-            text-align: center;
-            padding: 4em 1em;
-        }
-
-        .hero h1 {
-            font-size: 3em;
-            margin: 0.2em 0;
-        }
-
-        .hero h2 {
-            font-size: 1.8em;
-            color: #765827;
-            font-weight: 400;
-            margin: 0.2em 0;
-        }
-
-        .hero p {
-            font-size: 1.2em;
-            color: #543310;
-            max-width: 600px;
-            margin: 1em auto 0;
-        }
-
-        /* Sección categorías */
-        .categories {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 2em;
-            padding: 2em 1em;
-        }
-
-        .category {
-            width: 200px;
-            text-align: center;
-        }
-
-        .category img {
-            width: 100%;
-            border-radius: 8px;
-        }
-
-    /*FOOTER*/
-
-    footer {
-            width: 100%;
-            background-color: #765827;
-            padding: 10px;
-            background: linear-gradient(348deg, rgba(234,198,150) 0%, hsl(41, 97%, 14%) 100%);
-            text-align: center;
-            margin-top: 2em;
-        }
-
-        .footer-container {
-            display: flex;
-            justify-content: space-around;
-            align-items: flex-start;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .footer-secciones,
-        .footer-contacto {
-            text-align: left;
-        }
-
-        .footer-secciones h3,
-        .footer-contacto h3 {
-            font-size: 16px;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-
-        .footer-secciones ul,
-        .footer-contacto ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .footer-secciones li,
-        .footer-contacto li {
-            margin-bottom: 5px;
-        }
-
-        .derechos{
-            text-align: center;
-            margin-top: 30px;
-        }
-    </style>
 </head>
 
-<header>
-    <!-- Banner -->
-    <span class="banner">
-        <div class="logo">
-            <img src="/img/logo.png" alt="Le Nid de Café">
-        </div>
-    </span>
+<body>
+    <!-- CABECERA-->
+    <header class="main-header">
+        <nav>
+            <!-- Dentro de <nav> -->
+            <a href="../index.html" class="logo">
+            <img src="/Img/logo_final.png" alt="Logo Le Nid de Café">
+            <span>Le Nid de Café</span>
+            </a>
 
-    <div class="navigator">
 
-    <!-- Barra de navegación -->
-    <nav>
-        <a href="index.html" class="logo">Le Nid de Café</a>
-        <div class="menu">
-            <a href="/index.html">Inicio</a>
-            <a href="productos.html">Productos</a>
-            <a href="/Sites/accesorios.html">Accesorios</a>
-            <a href="/Sites/ofertas.html">Ofertas</a>
-            <a href="/Sites/formulario.html">Contacto</a>
-            <a href="/Sites/login.html">Iniciar sesión</a>
+            <!-- Menú de Navegación-->
+            <ul class="menu">
+                <li><a href="/index.html" class="active">Inicio</a></li>
+                <li><a href="/Sites/productos.html">Productos</a></li>
+                <li><a href="/Sites/accesorios.html">Accesorios</a></li>
+                <li><a href="/Sites/ofertas.html">Ofertas</a></li>
+                <li><a href="/Sites/formulario.html">Contacto</a></li>
+                <!-- Botón Login -->
+                <li><a href="/Sites/login.html" class="btn-login">Iniciar sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+
+        <main>
+        <div class="product">
+            <div class="product-img">
+                <img src="/Img/india.webp" alt="Café robsta India">
+                <span class="tag">new</span>
+            </div>
+            <div class="product-listing">
+                <div class="content">
+                    <h1 class="name">Café robusta India</h1>
+                    <p class="info"> Cultivado en Harley Estate (Manjarabad, Karnataka), un histórico cafetal familiar (desde 1860), este blend combina Arábica Selection 9 y Robusta premium Kaapi Royale, con cultivo bajo sombra y polícultivo.
+
+                        Ofrece una taza potente, dulce y compleja que funde lo mejor de ambos mundos.
+                        
+                    </p>
+                    <p class="price">14,50 €</p>
+                    <div class="btn-and-rating-box">
+                        <div class="rating">
+                            <img src="https://github.com/kunaal438/product-page/blob/master/img/star.png?raw=true"
+                                alt="">
+                            <img src="https://github.com/kunaal438/product-page/blob/master/img/star.png?raw=true"
+                                alt="">
+                            <img src="https://github.com/kunaal438/product-page/blob/master/img/star.png?raw=true"
+                                alt="">
+                            <img src="https://github.com/kunaal438/product-page/blob/master/img/star.png?raw=true"
+                                alt="">
+                            <img src="https://github.com/kunaal438/product-page/blob/master/img/star%20stroke.png?raw=true"
+                                alt="">
+                        </div>
+                        <button class="btn-compra">Comprar</button>
+                    </div>
+                </div>
+            </div>
         </div>
-    </nav>
-</div>
-</header>
+    </main>
+
+</body>
 
     <!-- Footer -->
     <footer>
@@ -166,10 +81,10 @@
             <div class="footer-secciones">
                 <h3>Secciones</h3>
                 <ul>
-                    <li><a href="#">Inicio</a></li>
-                    <li><a href="./Sites/productos.html">Productos</a></li>
-                    <li><a href="#">Accesorios</a></li>
-                    <li><a href="#">Ofertas</a></li>
+                    <li><a href="/index.html">Inicio</a></li>
+                    <li><a href="productos.html">Productos</a></li>
+                    <li><a href="accesorios.html">Accesorios</a></li>
+                    <li><a href="ofertas.html">Ofertas</a></li>
                 </ul>
             </div>
             <div class="footer-contacto">

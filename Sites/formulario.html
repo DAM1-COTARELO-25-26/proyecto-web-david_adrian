@@ -5,243 +5,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Le Nid de Café</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: "Playfair Display", serif;
-            background-color: #EAC696; /* Crema Suave */
-            color: #543310; /* Café Intenso */
-        }
+    <link rel="stylesheet" href="/CSS/index.css">
+    <link rel="stylesheet" href="/CSS/header.css">
+    <link rel="stylesheet" href="/CSS/footer.css">
+    <link rel="stylesheet" href="/CSS/producto.css">
+    <link rel="stylesheet" href="/CSS/formulario.css">
 
-        /* Barra de navegación */
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #765827; /* Marrón Tostado */
-            padding: 1em 2em;
-        }
-
-        nav .logo {
-            font-size: 1.8em;
-            font-weight: bold;
-            color: #EAC696;
-            text-decoration: none;
-        }
-
-        nav .menu a {
-            margin-left: 1.5em;
-            text-decoration: none;
-            color: #EAC696;
-            font-weight: 600;
-        }
-
-        nav .menu a:hover {
-            color: #C8AE7D; /* Caramelo Claro */
-        }
-
-        /* Sección hero */
-        .hero {
-            text-align: center;
-            padding: 4em 1em;
-        }
-
-        .hero h1 {
-            font-size: 3em;
-            margin: 0.2em 0;
-        }
-
-        .hero h2 {
-            font-size: 1.8em;
-            color: #765827;
-            font-weight: 400;
-            margin: 0.2em 0;
-        }
-
-        .hero p {
-            font-size: 1.2em;
-            color: #543310;
-            max-width: 600px;
-            margin: 1em auto 0;
-        }
-
-        /* Sección categorías */
-        .categories {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 2em;
-            padding: 2em 1em;
-        }
-
-        .category {
-            width: 200px;
-            text-align: center;
-        }
-
-        .category img {
-            width: 100%;
-            border-radius: 8px;
-        }
-
-    /*FOOTER*/
-
-    footer {
-            width: 100%;
-            background-color: #765827;
-            padding: 10px;
-            background: linear-gradient(348deg, rgba(234,198,150) 0%, hsl(41, 97%, 14%) 100%);
-            text-align: center;
-            margin-top: 2em;
-        }
-
-        .footer-container {
-            display: flex;
-            justify-content: space-around;
-            align-items: flex-start;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .footer-secciones,
-        .footer-contacto {
-            text-align: left;
-        }
-
-        .footer-secciones h3,
-        .footer-contacto h3 {
-            font-size: 16px;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-
-        .footer-secciones ul,
-        .footer-contacto ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .footer-secciones li,
-        .footer-contacto li {
-            margin-bottom: 5px;
-        }
-
-        .derechos{
-            text-align: center;
-            margin-top: 30px;
-        }
-    </style>
+    
 </head>
 
-<header>
-    <!-- Banner -->
-    <span class="banner">
-        <div class="logo">
-            <img src="/img/logo.png" alt="Le Nid de Café">
-        </div>
-    </span>
+<body>
+    <!-- CABECERA-->
+    <header class="main-header">
+        <nav>
+            <!-- Dentro de <nav> -->
+            <a href="../index.html" class="logo">
+            <img src="/Img/logo_final.png" alt="Logo Le Nid de Café">
+            <span>Le Nid de Café</span>
+            </a>
 
-    <div class="navigator">
 
-    <!-- Barra de navegación -->
-    <nav>
-        <a href="index.html" class="logo">Le Nid de Café</a>
-        <div class="menu">
-            <a href="/index.html">Inicio</a>
-            <a href="productos.html">Productos</a>
-            <a href="/Sites/accesorios.html">Accesorios</a>
-            <a href="/Sites/ofertas.html">Ofertas</a>
-            <a href="/Sites/formulario.html">Contacto</a>
-            <a href="/Sites/login.html">Iniciar sesión</a>
-        </div>
-    </nav>
-</div>
-</header>
+            <!-- Menú de Navegación-->
+            <ul class="menu">
+                <li><a href="/index.html" class="active">Inicio</a></li>
+                <li><a href="/Sites/productos.html">Productos</a></li>
+                <li><a href="/Sites/accesorios.html">Accesorios</a></li>
+                <li><a href="/Sites/ofertas.html">Ofertas</a></li>
+                <li><a href="/Sites/formulario.html">Contacto</a></li>
+                <!-- Botón Login -->
+                <li><a href="/Sites/login.html" class="btn-login">Iniciar sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+
 
 <main>
-<style>   
-.container {
-    max-width: 800px;
-    margin: 50px auto;
-    padding: 20px;
-    background-color: #765827; 
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  h2 { /* Título formulario*/
-    text-align: center;
-    color: #EAC696;
-    font-size: 2px;
-    margin-bottom: 20px;
-  }
-  
-  #enviar {
-    background-color: #C8AE7D;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    font-size: 1.1rem;
-    padding: 12px 20px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-#enviar:hover {
-    background-color: #C8AE7D;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-    transform: translateY(-2px);
-}
-
-#enviar:active {
-    background-color: #C8AE7D;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    transform: translateY(2px);
-}
-
-  .form-group {
-    margin-bottom: 15px;
-  }
-  
-  label {
-    display: block;
-    font-weight: bold;
-    color: #000000;
-    margin-bottom: 5px;
-  }
-  
-  input, textarea, select {
-    width: 100%;
-    padding: 12px;
-    margin-top: 5px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-    box-sizing: border-box;
-    font-size: 1rem;
-  }
-  
-  input[type="submit"] {
-    background-color: rgb(245, 186, 98);
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    font-size: 1.1rem;
-    transition: background-color 0.3s ease;
-  }
-  
-  .submit:hover {
-    background-color: rgb(245, 186, 98);
-  }
-  
-  textarea {
-    height: 150px;
-    resize: vertical;
-  }
-  
-</style>
-
 <div class="container">
     <h2>¡Contáctanos!</h2>
     <form action="/enviar_formulario" method="post">
@@ -285,9 +83,9 @@
                 <h3>Secciones</h3>
                 <ul>
                     <li><a href="/index.html">Inicio</a></li>
-                    <li><a href="./Sites/productos.html">Productos</a></li>
-                    <li><a href="#">Accesorios</a></li>
-                    <li><a href="#">Ofertas</a></li>
+                    <li><a href="productos.html">Productos</a></li>
+                    <li><a href="accesorios.html">Accesorios</a></li>
+                    <li><a href="ofertas.html">Ofertas</a></li>
                 </ul>
             </div>
             <div class="footer-contacto">

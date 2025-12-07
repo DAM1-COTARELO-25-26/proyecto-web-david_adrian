@@ -5,371 +5,144 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Le Nid de Café</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: "Playfair Display", serif;
-            background-color: #EAC696; /* Crema Suave */
-            color: #543310; /* Café Intenso */
-        }
+    <link rel="stylesheet" href="/CSS/index.css">
+    <link rel="stylesheet" href="/CSS/header.css">
+    <link rel="stylesheet" href="/CSS/footer.css">
+    <link rel="stylesheet" href="/CSS/producto.css">
 
-        /* Barra de navegación */
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #765827; /* Marrón Tostado */
-            padding: 1em 2em;
-        }
-
-        nav .logo {
-            font-size: 1.8em;
-            font-weight: bold;
-            color: #EAC696;
-            text-decoration: none;
-        }
-
-        nav .menu a {
-            margin-left: 1.5em;
-            text-decoration: none;
-            color: #EAC696;
-            font-weight: 600;
-        }
-
-        nav .menu a:hover {
-            color: #C8AE7D; /* Caramelo Claro */
-        }
-
-        /* Sección hero */
-        .hero {
-            text-align: center;
-            padding: 4em 1em;
-        }
-
-        .hero h1 {
-            font-size: 3em;
-            margin: 0.2em 0;
-        }
-
-        .hero h2 {
-            font-size: 1.8em;
-            color: #765827;
-            font-weight: 400;
-            margin: 0.2em 0;
-        }
-
-        .hero p {
-            font-size: 1.2em;
-            color: #543310;
-            max-width: 600px;
-            margin: 1em auto 0;
-        }
-
-        /* Sección categorías */
-        .categories {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 2em;
-            padding: 2em 1em;
-        }
-
-        .category {
-            width: 200px;
-            text-align: center;
-        }
-
-        .category img {
-            width: 100%;
-            border-radius: 8px;
-        }
-
-
-        main {
-    display: flex;
-    justify-content: center;
-    padding: 20px 0px;
-}
-
-.product {
-    position: relative;
-    width: 1000px;
-    min-width: 350px;
-    min-height: 500px;
-    height: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.product-img{
-    width: 40%;
-    height: 500px;
-    background: #fff;
-    position: relative;
-    opacity: 0;
-    transform: translateY(-50px);
-    animation: fade-in 1s forwards 1;
-    margin-right: 60px;
-}
-
-.product-img img{
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    user-select: none;
-}
-
-.tag{
-    position: absolute;
-    top: 20px;
-    left: -10px;
-    transform-origin: left;
-    opacity: 0;
-    transform: rotate(-90deg);
-    text-transform: capitalize;
-    color: black;
-    padding: 5px 10px;
-    width: 100px;
-    font-size: 18px;
-    text-align: center;
-    background: #765827;
-    user-select: none;
-    animation: tag .5s 1s forwards 1;
-}
-
-@keyframes tag{
-    100%{
-        opacity: 1;
-        transform: rotate(-20deg);
-    }
-}
-
-.product-listing{
-    width: 60%;
-    min-height: 500px;
-    height: auto;
-    background: #543310;
-    padding: 40px;
-    display: flex;
-    justify-content: center;
-    color: black;
-    opacity: 0;
-    transform: translateY(50px);
-    animation: fade-in 1s forwards 1;
-    
-}
-
-@keyframes fade-in{
-    100%{
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.name{
-    font-family: 'dosis';
-    font-size: 70px;
-    text-transform: capitalize;
-}
-
-.info{
-    font-size: 18px;
-    line-height: 30px;
-    margin: 50px 0;
-}
-
-.price{
-    font-size: 70px;
-    font-weight: 100;
-    margin-bottom: 20px;
-}
-
-.btn-and-rating-box{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-}
-
-.rating{
-    width: fit-content;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.rating img{
-    width: 20px;
-    height: 20px;
-    margin: 0 2px;
-
-}
-
-.btn-compra {
-    background: transparent;
-    position: relative;
-    padding: 5px 15px;
-    display: flex;
-    align-items: center;
-    font-size: 17px;
-    font-weight: 600;
-    text-decoration: none;
-    cursor: pointer;
-    border: 1px solid rgba(234,198,150);
-    border-radius: 25px;
-    outline: none;
-    overflow: hidden;
-    color: rgba(234,198,150);
-    transition: color 0.3s 0.1s ease-out;
-    text-align: center;
-    -webkit-transition: color 0.3s 0.1s ease-out;
-    -moz-transition: color 0.3s 0.1s ease-out;
-    -ms-transition: color 0.3s 0.1s ease-out;
-    -o-transition: color 0.3s 0.1s ease-out;
-}
-
-.btn-compra span {
-    margin: 10px;
-}
-
-.btn-compra::before {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: auto;
-    content: '';
-    border-radius: 50%;
-    display: block;
-    width: 20em;
-    height: 20em;
-    left: -5em;
-    text-align: center;
-    transition: box-shadow 0.5s ease-out;
-    z-index: -1;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
-    -webkit-transition: box-shadow 0.5s ease-out;
-    -moz-transition: box-shadow 0.5s ease-out;
-    -ms-transition: box-shadow 0.5s ease-out;
-    -o-transition: box-shadow 0.5s ease-out;
-}
-
-.btn-compra:hover {
-    color: #fff;
-    border: 1px solid rgba(234,198,150);
-}
-
-.btn-compra:hover::before {
-    box-shadow: inset 0 0 0 10em rgba(234,198,150);
-}
-
-
-
-
-
-
-    /*FOOTER*/
-
-    footer {
-            width: 100%;
-            background-color: #765827;
-            padding: 10px;
-            background: linear-gradient(348deg, rgba(234,198,150) 0%, hsl(41, 97%, 14%) 100%);
-            text-align: center;
-            margin-top: 2em;
-        }
-
-        .footer-container {
-            display: flex;
-            justify-content: space-around;
-            align-items: flex-start;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .footer-secciones,
-        .footer-contacto {
-            text-align: left;
-        }
-
-        .footer-secciones h3,
-        .footer-contacto h3 {
-            font-size: 16px;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-
-        .footer-secciones ul,
-        .footer-contacto ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .footer-secciones li,
-        .footer-contacto li {
-            margin-bottom: 5px;
-        }
-
-        .derechos{
-            text-align: center;
-            margin-top: 30px;
-        }
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
 <body>
-    <!-- Barra de navegación -->
-    <nav>
-        <a href="index.html" class="logo">Le Nid de Café</a>
-        <div class="menu">
-            <a href="/index.html">Inicio</a>
-            <a href="productos.html">Productos</a>
-            <a href="/Sites/accesorios.html">Accesorios</a>
-            <a href="/Sites/ofertas.html">Ofertas</a>
-            <a href="/Sites/formulario.html">Contacto</a>
-            <a href="/Sites/login.html">Iniciar sesión</a>
-        </div>
-    </nav>
+    <!-- CABECERA-->
+    <header class="main-header">
+        <nav>
+            <!-- Dentro de <nav> -->
+            <a href="../index.html" class="logo">
+            <img src="/Img/logo_final.png" alt="Logo Le Nid de Café">
+            <span>Le Nid de Café</span>
+            </a>
 
 
-    <main>
-        <div class="product">
-            <div class="product-img">
-                <img src="/Img/india.webp" alt="Café robsta India">
-                <span class="tag">new</span>
+            <!-- Menú de Navegación-->
+            <ul class="menu">
+                <li><a href="/index.html" class="active">Inicio</a></li>
+                <li><a href="/Sites/productos.html">Productos</a></li>
+                <li><a href="/Sites/accesorios.html">Accesorios</a></li>
+                <li><a href="/Sites/ofertas.html">Ofertas</a></li>
+                <li><a href="/Sites/formulario.html">Contacto</a></li>
+                <!-- Botón Login -->
+                <li><a href="/Sites/login.html" class="btn-login">Iniciar sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Título de la Sección -->
+    <section class="page-title">
+        <h1>Nuestros Cafés</h1>
+        <p>Selección exclusiva de granos de todo el mundo</p>
+    </section>
+
+    <!-- REJILLA DE PRODUCTOS -->
+    <main class="products-grid-container">
+        
+        <!-- Producto 1: India  -->
+        <div class="product-card-full">
+            <div class="card-image">
+                <img src="../Img/india.webp" alt="Café Robusta India">
+                <span class="tag-new">Nuevo</span>
             </div>
-            <div class="product-listing">
-                <div class="content">
-                    <h1 class="name">Café robusta India</h1>
-                    <p class="info"> Cultivado en Harley Estate (Manjarabad, Karnataka), un histórico cafetal familiar (desde 1860), este blend combina Arábica Selection 9 y Robusta premium Kaapi Royale, con cultivo bajo sombra y polícultivo.
-
-                        Ofrece una taza potente, dulce y compleja que funde lo mejor de ambos mundos.
-                        
-                    </p>
-                    <p class="price">14,50 €</p>
-                    <div class="btn-and-rating-box">
-                        <div class="rating">
-                            <img src="https://github.com/kunaal438/product-page/blob/master/img/star.png?raw=true"
-                                alt="">
-                            <img src="https://github.com/kunaal438/product-page/blob/master/img/star.png?raw=true"
-                                alt="">
-                            <img src="https://github.com/kunaal438/product-page/blob/master/img/star.png?raw=true"
-                                alt="">
-                            <img src="https://github.com/kunaal438/product-page/blob/master/img/star.png?raw=true"
-                                alt="">
-                            <img src="https://github.com/kunaal438/product-page/blob/master/img/star%20stroke.png?raw=true"
-                                alt="">
-                        </div>
-                        <button class="btn-compra">Comprar</button>
-                    </div>
+            <div class="card-details">
+                <h2>Café Robusta India</h2>
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i> 
+                </div>
+                <p class="description">
+                    Cultivado en Harley Estate (Karnataka), este blend combina Arábica y Robusta premium Kaapi Royale. Potente, dulce y complejo.
+                </p>
+                <div class="price-action">
+                    <span class="price">14,50 €</span>
+                    <button class="btn-buy">Añadir</button>
                 </div>
             </div>
         </div>
+
+        <!-- Producto 2: Kenya -->
+        <div class="product-card-full">
+            <div class="card-image">
+                <img src="../Img/kenya.avif" alt="Café Kenya">
+            </div>
+            <div class="card-details">
+                <h2>Café Arábica Kenya</h2>
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p class="description">
+                    Café de altura con notas cítricas y cuerpo medio. Ideal para quienes buscan acidez brillante y aroma floral.
+                </p>
+                <div class="price-action">
+                    <span class="price">12,90 €</span>
+                    <button class="btn-buy">Añadir</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Producto 3: Colombia -->
+        <div class="product-card-full">
+            <div class="card-image">
+                <img src="../Img/colombia.avif" alt="Café Colombia">
+            </div>
+            <div class="card-details">
+                <h2>Café Colombia Supremo</h2>
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <p class="description">
+                    El clásico mundial. Sabor suave, balanceado y con notas a caramelo y nuez. Perfecto para el día a día.
+                </p>
+                <div class="price-action">
+                    <span class="price">10,00 €</span>
+                    <button class="btn-buy">Añadir</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Producto 4: Mezcla -->
+        <div class="product-card-full">
+            <div class="card-image">
+                <img src="../Img/mezcla.jpg" alt="Café Mezcla">
+            </div>
+            <div class="card-details">
+                <h2>Mezcla Especial Casa</h2>
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+                <p class="description">
+                    Nuestra fórmula secreta. 70% Arábica y 30% Robusta para conseguir una crema espesa y sabor intenso.
+                </p>
+                <div class="price-action">
+                    <span class="price">15,00 €</span>
+                    <button class="btn-buy">Añadir</button>
+                </div>
+            </div>
+        </div>
+
     </main>
 
 </body>
@@ -382,10 +155,10 @@
             <div class="footer-secciones">
                 <h3>Secciones</h3>
                 <ul>
-                    <li><a href="#">Inicio</a></li>
-                    <li><a href="./Sites/productos.html">Productos</a></li>
-                    <li><a href="#">Accesorios</a></li>
-                    <li><a href="#">Ofertas</a></li>
+                        <li><a href="/index.html">Inicio</a></li>
+                        <li><a href="productos.html">Productos</a></li>
+                        <li><a href="accesorios.html">Accesorios</a></li>
+                        <li><a href="ofertas.html">Ofertas</a></li>
                 </ul>
             </div>
             <div class="footer-contacto">
