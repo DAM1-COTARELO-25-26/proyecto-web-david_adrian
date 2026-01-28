@@ -45,3 +45,8 @@
         text-align: center;
         margin-top: 30px;
     }
+
+    .footer-secciones ul li a,
+    .footer-contacto ul li a {
+        color: #C8AE7D;
+    }
