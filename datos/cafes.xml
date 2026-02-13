@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE cafeteria SYSTEM "cafes.dtd">
-<cafeteria>
+<cafeteria xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:noNamespaceSchemaLocation="cafes.xsd">
     <cafes>
 
         <cafe id="CF001" origen="India" tueste="oscuro" molido="false" destacado="true">
