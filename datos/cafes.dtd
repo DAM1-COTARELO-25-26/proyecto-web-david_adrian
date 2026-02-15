@@ -1,6 +1,8 @@
 <!ELEMENT cafeteria (cafes)>
 <!ATTLIST cafeteria
-    nombre      CDATA   #IMPLIED>
+    nombre      CDATA   #IMPLIED
+    xmlns:xsi CDATA #IMPLIED
+    xsi:noNamespaceSchemaLocation CDATA #IMPLIED>
 
 <!ELEMENT cafes (cafe+)>
 
