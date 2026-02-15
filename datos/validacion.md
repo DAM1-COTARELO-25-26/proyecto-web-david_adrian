@@ -168,8 +168,8 @@ Justificación:
 #### 2. Restricción de rango en precio
 
 ```xml
-minInclusive="5.00"
-maxInclusive="50.00"
+<xs:minInclusive value="5.00"/>
+<xs:maxInclusive value="50.00"/>
 ```
 
 Justificación:
@@ -179,6 +179,12 @@ Justificación:
 
 #### 3. Enumeración del atributo tueste
 
+```xml
+<xs:enumeration value="claro"/>
+<xs:enumeration value="medio"/>
+<xs:enumeration value="oscuro"/>
+```
+
 Justificación:
 
 - Limita los valores posibles.
@@ -186,10 +192,37 @@ Justificación:
 
 #### 4. Validación de fecha (xs:date)
 
+```xml
+<xs:element name="fechaAlta" type="xs:date"/>
+```
+
 Justificación:
 
 - Asegura formato estándar.
 - Permite operaciones de ordenación temporal.
+
+#### 5. Restricción de longitud en nombre y descripción
+
+```xml
+<xs:minLength value="3"/>
+<xs:maxLength value="60"/>
+```
+
+Justificación:
+
+- Evita textos demasiado cortos o excesivamente largos.
+- Mejora la calidad y consistencia demlos datos.
+
+#### 6. Restricción de decimales en precio
+
+```xml
+<xs:fractionDigits value="2"/>
+```
+
+Justificación:
+
+- Limita el número de decimales permitidos.
+- Mantiene dormato monetario correcto.
 
 
 ## 6. Conclusiones
