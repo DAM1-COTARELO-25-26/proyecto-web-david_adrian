@@ -24,10 +24,10 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
 <xsl:template match="cafe">
 
-    <div class="product-card-full">
+    <article class="product-card-full">
     <div class="card-image">
 
-    <img>
+    <img alt="Imagen del café">
         <xsl:attribute name="src">
         ../img/<xsl:value-of select="imagen"/>
         </xsl:attribute>
@@ -62,7 +62,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
     </div>
 
-    </div>
+    </article>
 
 </xsl:template>
 
