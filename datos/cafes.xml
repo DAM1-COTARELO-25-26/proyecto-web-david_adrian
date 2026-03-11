@@ -18,7 +18,7 @@
                 <etiqueta>espresso</etiqueta>
                 <etiqueta>leche</etiqueta>
             </etiquetas>
-            <imagen>img/india.webp</imagen>
+            <imagen>Img/india.webp</imagen>
         </cafe>
 
         <cafe id="CF002" origen="Kenya" tueste="medio" molido="false" destacado="true">
@@ -34,7 +34,7 @@
                 <etiqueta>filtro</etiqueta>
                 <etiqueta>pour-over</etiqueta>
             </etiquetas>
-            <imagen>img/kenya.avif</imagen>
+            <imagen>Img/kenya.avif</imagen>
         </cafe>
 
         <cafe id="CF003" origen="Colombia" tueste="medio" molido="false" destacado="false">
@@ -50,7 +50,7 @@
                 <etiqueta>espresso</etiqueta>
                 <etiqueta>filtro</etiqueta>
             </etiquetas>
-            <imagen>img/colombia.avif</imagen>
+            <imagen>Img/colombia.avif</imagen>
         </cafe>
 
         <cafe id="CF004" origen="Casa" tueste="oscuro" molido="false" destacado="true">
@@ -66,7 +66,7 @@
                 <etiqueta>espresso</etiqueta>
                 <etiqueta>capuccino</etiqueta>
             </etiquetas>
-            <imagen>img/mezcla.jpg</imagen>
+            <imagen>Img/mezcla.jpg</imagen>
         </cafe>
 
         <cafe id="CF005" origen="Etiopía" tueste="claro" molido="false" destacado="false">
@@ -82,7 +82,7 @@
                 <etiqueta>filtro</etiqueta>
                 <etiqueta>cold-brew</etiqueta>
             </etiquetas>
-            <imagen>img/etiopia.jpg</imagen>
+            <imagen>Img/etiopia.jpg</imagen>
         </cafe>
 
         <cafe id="CF006" origen="Brasil" tueste="medio" molido="true" destacado="false">
@@ -97,7 +97,7 @@
             <etiquetas>
                 <etiqueta>espresso</etiqueta>
             </etiquetas>
-            <imagen>img/brasil.jpg</imagen>
+            <imagen>Img/brasil.jpg</imagen>
         </cafe>
 
         <cafe id="CF007" origen="Guatemala" tueste="medio" molido="false" destacado="false">
@@ -113,7 +113,7 @@
                 <etiqueta>filtro</etiqueta>
                 <etiqueta>espresso</etiqueta>
             </etiquetas>
-            <imagen>img/guatemala.jpg</imagen>
+            <imagen>Img/guatemala.jpg</imagen>
         </cafe>
 
         <cafe id="CF008" origen="Perú" tueste="claro" molido="false" destacado="false">
@@ -129,7 +129,7 @@
                 <etiqueta>filtro</etiqueta>
                 <etiqueta>prensa-francesa</etiqueta>
             </etiquetas>
-            <imagen>img/peru.jpg</imagen>
+            <imagen>Img/peru.jpg</imagen>
         </cafe>
 
         <cafe id="CF009" origen="Costa Rica" tueste="medio" molido="false" destacado="false">
@@ -144,7 +144,7 @@
             <etiquetas>
                 <etiqueta>filtro</etiqueta>
             </etiquetas>
-            <imagen>img/costa-rica.jpg</imagen>
+            <imagen>Img/costa-rica.jpg</imagen>
         </cafe>
 
         <cafe id="CF010" origen="México" tueste="claro" molido="false" destacado="true">
@@ -160,7 +160,7 @@
                 <etiqueta>filtro</etiqueta>
                 <etiqueta>espresso</etiqueta>
             </etiquetas>
-            <imagen>img/mexico.jpg</imagen>
+            <imagen>Img/mexico.jpg</imagen>
         </cafe>
 
     </cafes>
