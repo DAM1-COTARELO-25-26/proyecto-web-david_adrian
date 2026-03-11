@@ -1,57 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <xsl:stylesheet 
-    version="1.0"
-    xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-
+version="1.0"
+xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 <xsl:output method="html" indent="yes"/>
+
+
+<xsl:variable name="totalCafes" select="count(cafeteria/cafes/cafe)"/>
 
 <xsl:template match="/">
 
-<div class="products-grid-container">
+    <section class="products-grid-container">
 
-<xsl:for-each select="cafeteria/cafes/cafe">
-<xsl:sort select="precio" data-type="number"/>
+    <p>Total de cafés disponibles: <xsl:value-of select="$totalCafes"/></p>
 
-<div class="product-card-full">
+    <xsl:apply-templates select="cafeteria/cafes/cafe">
+        <xsl:sort select="precio" data-type="number"/>
+    </xsl:apply-templates>
 
-<div class="card-image">
-<img>
-<xsl:attribute name="src">
-../<xsl:value-of select="imagen"/>
-</xsl:attribute>
-</img>
+    </section>
 
-<xsl:if test="@destacado='true'">
-<span class="tag-new">Nuevo</span>
-</xsl:if>
+</xsl:template>
 
-</div>
 
-<div class="card-details">
+<xsl:template match="cafe">
 
-<h2>
-<xsl:value-of select="nombre"/>
-</h2>
+    <div class="product-card-full">
+    <div class="card-image">
 
-<p class="description">
-<xsl:value-of select="descripcion"/>
-</p>
+    <img>
+        <xsl:attribute name="src">
+        ../img/<xsl:value-of select="imagen"/>
+        </xsl:attribute>
+    </img>
 
-<div class="price-action">
-<span class="price">
-<xsl:value-of select="precio"/> €
-</span>
-<button class="btn-buy">Añadir</button>
-</div>
+    <xsl:if test="@destacado='true'">
+        <span class="tag-new">Nuevo</span>
+    </xsl:if>
 
-</div>
+    </div>
 
-</div>
+    <div class="card-details">
 
-</xsl:for-each>
+    <h2>
+        <xsl:value-of select="position()"/>. 
+        <xsl:value-of select="nombre"/>
+    </h2>
 
-</div>
+    <p class="description">
+        <xsl:value-of select="descripcion"/>
+    </p>
+
+    <div class="price-action">
+
+    <span class="price">
+        <xsl:value-of select="precio"/> €
+    </span>
+
+    <button class="btn-buy">Añadir</button>
+
+    </div>
+
+    </div>
+
+    </div>
 
 </xsl:template>
 
