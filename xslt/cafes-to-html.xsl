@@ -11,6 +11,7 @@
 <div class="products-grid-container">
 
 <xsl:for-each select="cafeteria/cafes/cafe">
+<xsl:sort select="precio" data-type="number"/>
 
 <div class="product-card-full">
 
