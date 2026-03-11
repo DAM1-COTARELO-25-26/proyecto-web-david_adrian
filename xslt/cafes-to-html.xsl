@@ -1,65 +1,176 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet 
-version="1.0"
-xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-<xsl:output method="html" indent="yes"/>
 
+<xsl:stylesheet version="1.0"
+xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+
+<xsl:output method="html" encoding="UTF-8" indent="yes"/>
+
+
+
+<xsl:variable name="totalCafes" select="count(//cafe)"/>
 
 <xsl:template match="/">
 
-    <section class="products-grid-container">
+<html lang="es">
 
-        <p>Total de cafés disponibles: 
-            <xsl:value-of select="$totalCafes"/>
-        </p>
+<head>
 
-    <xsl:apply-templates select="cafeteria/cafes/cafe">
-        <xsl:sort select="precio" data-type="number"/>
-    </xsl:apply-templates>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 
-    </section>
+<title>Productos - Le Nid de Café</title>
+
+<link rel="stylesheet" href="../CSS/index.css"/>
+<link rel="stylesheet" href="../CSS/header.css"/>
+<link rel="stylesheet" href="../CSS/footer.css"/>
+<link rel="stylesheet" href="../CSS/producto.css"/>
+
+</head>
+
+<body>
+
+<header class="main-header">
+<nav>
+
+<a href="../index.html" class="logo">
+<img src="../Img/logo_final.png" alt="Logo Le Nid de Café"/>
+<span>Le Nid de Café</span>
+</a>
+
+<ul class="menu">
+<li><a href="../index.html">Inicio</a></li>
+<li><a href="../datos/cafes.xml" class="active">Productos</a></li>
+<li><a href="../Sites/accesorios.html">Accesorios</a></li>
+<li><a href="../Sites/ofertas.html">Ofertas</a></li>
+<li><a href="../Sites/formulario.html">Contacto</a></li>
+<li><a href="../Sites/login.html" class="btn-login">Iniciar sesión</a></li>
+</ul>
+
+</nav>
+</header>
+
+<section class="page-title">
+
+<h1>Nuestros cafés</h1>
+
+<p>
+Total de cafés disponibles:
+<xsl:value-of select="$totalCafes"/>
+</p>
+
+</section>
+
+<section class="products-grid-container">
+
+<xsl:apply-templates select="//cafe">
+<xsl:sort select="precio" data-type="number"/>
+</xsl:apply-templates>
+
+</section>
+
+<footer>
+
+<div class="footer-container">
+
+<div class="footer-secciones">
+<h3>Secciones</h3>
+<ul>
+<li><a href="../index.html">Inicio</a></li>
+<li><a href="../datos/cafes.xml">Productos</a></li>
+<li><a href="../Sites/accesorios.html">Accesorios</a></li>
+<li><a href="../Sites/ofertas.html">Ofertas</a></li>
+</ul>
+</div>
+
+<div class="footer-contacto">
+<h3>Contacto</h3>
+<ul>
+<li>Telefono contacto: 986-203-475</li>
+<li>
+Correo contacto:
+<a href="mailto:leniddecafe@gmail.com">leniddecafe@gmail.com</a>
+</li>
+<li><a href="../Sites/formulario.html">Contacto</a></li>
+</ul>
+</div>
+
+<div class="footer-secciones">
+<h3>Legal</h3>
+<ul>
+<li>Términos y Condiciones</li>
+<li>Política de Privacidad</li>
+</ul>
+</div>
+
+</div>
+
+<p>Le Nid de Café • © 2025 • Todos los derechos reservados</p>
+
+</footer>
+
+</body>
+
+</html>
 
 </xsl:template>
+
 
 
 <xsl:template match="cafe">
 
-    <article class="product-card-full">
-    <div class="card-image">
+<article class="product-card-full">
 
-    <img alt="Imagen del café" src="../{imagen}" />
+<div class="card-image">
 
-    <xsl:if test="@destacado='true'">
-        <span class="tag-new">Nuevo</span>
-    </xsl:if>
+<img alt="Imagen del café">
 
-    </div>
+<xsl:attribute name="src">
+<xsl:text>../</xsl:text>
+<xsl:value-of select="imagen"/>
+</xsl:attribute>
 
-    <div class="card-details">
+</img>
 
-    <h2>
-        <xsl:value-of select="position()"/>. 
-        <xsl:value-of select="nombre"/>
-    </h2>
+<xsl:if test="@destacado='true'">
+<span class="tag-new">Nuevo</span>
+</xsl:if>
 
-    <p class="description">
-        <xsl:value-of select="descripcion"/>
-    </p>
+</div>
 
-    <div class="price-action">
+<div class="card-details">
 
-    <span class="price">
-        <xsl:value-of select="precio"/> €
-    </span>
+<h2>
 
-    <button class="btn-buy">Añadir</button>
+<xsl:value-of select="position()"/>.
+<xsl:value-of select="nombre"/>
 
-    </div>
+</h2>
 
-    </div>
+<p class="description">
 
-    </article>
+<xsl:value-of select="descripcion"/>
+
+</p>
+
+<div class="price-action">
+
+<span class="price">
+
+<xsl:value-of select="precio"/> €
+
+</span>
+
+<button class="btn-buy">Añadir</button>
+
+</div>
+
+</div>
+
+</article>
 
 </xsl:template>
 
 </xsl:stylesheet>
+
+

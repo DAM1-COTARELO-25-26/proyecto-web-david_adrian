@@ -97,7 +97,7 @@
             <etiquetas>
                 <etiqueta>espresso</etiqueta>
             </etiquetas>
-            <imagen>Img/brasil.jpg</imagen>
+            <imagen>Img/brasil.png</imagen>
         </cafe>
 
         <cafe id="CF007" origen="Guatemala" tueste="medio" molido="false" destacado="false">
@@ -129,7 +129,7 @@
                 <etiqueta>filtro</etiqueta>
                 <etiqueta>prensa-francesa</etiqueta>
             </etiquetas>
-            <imagen>Img/peru.jpg</imagen>
+            <imagen>Img/peru.png</imagen>
         </cafe>
 
         <cafe id="CF009" origen="Costa Rica" tueste="medio" molido="false" destacado="false">
@@ -165,3 +165,7 @@
 
     </cafes>
 </cafeteria>
+
+
+
+
