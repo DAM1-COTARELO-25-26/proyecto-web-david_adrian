@@ -18,7 +18,7 @@
                 <etiqueta>espresso</etiqueta>
                 <etiqueta>leche</etiqueta>
             </etiquetas>
-            <imagen>img/india.wep</imagen>
+            <imagen>img/india.webp</imagen>
         </cafe>
 
         <cafe id="CF002" origen="Kenya" tueste="medio" molido="false" destacado="true">

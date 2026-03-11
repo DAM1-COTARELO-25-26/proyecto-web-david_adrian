@@ -5,13 +5,13 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 <xsl:output method="html" indent="yes"/>
 
 
-<xsl:variable name="totalCafes" select="count(cafeteria/cafes/cafe)"/>
-
 <xsl:template match="/">
 
     <section class="products-grid-container">
 
-    <p>Total de cafés disponibles: <xsl:value-of select="$totalCafes"/></p>
+        <p>Total de cafés disponibles: 
+            <xsl:value-of select="$totalCafes"/>
+        </p>
 
     <xsl:apply-templates select="cafeteria/cafes/cafe">
         <xsl:sort select="precio" data-type="number"/>
@@ -27,11 +27,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
     <article class="product-card-full">
     <div class="card-image">
 
-    <img alt="Imagen del café">
-        <xsl:attribute name="src">
-        ../img/<xsl:value-of select="imagen"/>
-        </xsl:attribute>
-    </img>
+    <img alt="Imagen del café" src="../{imagen}" />
 
     <xsl:if test="@destacado='true'">
         <span class="tag-new">Nuevo</span>
