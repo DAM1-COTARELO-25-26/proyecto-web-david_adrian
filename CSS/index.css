@@ -108,6 +108,7 @@ nav .menu a:hover {
     gap: 20px;
     justify-content: center;
     padding: 20px;
+}
 
 .product-card { /*Etiquetas productos*/
     background-color: #fff;
@@ -121,6 +122,7 @@ nav .menu a:hover {
     overflow: hidden;
     position: relative;
     margin-bottom: 15px;
+}
 
 img {
     max-width: 100%;
@@ -195,7 +197,7 @@ h3 {
         background-color: #EAC696;
     }
 }
-}
+
 
 .product-card:hover {
 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -213,7 +215,7 @@ filter: brightness(0.9);
     visibility: visible; /* Lo muestra visualmente */
 }
 }
-}
+
 
 
 .categories {
@@ -261,4 +263,5 @@ filter: brightness(0.9);
     background-color: #fff;
     position: relative;
     z-index: 1;
+
 }
