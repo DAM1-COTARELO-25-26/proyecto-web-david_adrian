@@ -13,7 +13,7 @@ Selecciona todos los nombres de café desde la raíz del documento.
 Comprobar la estructura completa del XML y listar todos los nombres de productos.
 
 ## 2. Ruta relativa
-**Expresión XPath:** `cafeteria/cafes/cafe/precio`
+**Expresión XPath:** `//cafe/precio`
 
 **Qué selecciona:**
 Selecciona todos los precios de los cafés sin usar ruta absoluta.
