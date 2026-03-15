@@ -65,3 +65,56 @@ El XML tiene la siguiente estructura jerárquica:
 ### Validación
 La validación del XML se realiza con el DTD y el XSD.  
 Ver documentación completa en [`/datos/validacion.md`](datos/validacion.md)
+
+## Proceso de transformación documentado
+
+### Archivos involucrados
+
+- **`datos/cafes.xml`**: archivo XML de entrada con la información de los cafés.
+- **`xslt/cafes-to-html.xsl`**: hoja de transformación XSLT utilizada para convertir el XML en HTML.
+- **`cafes.html`**: archivo HTML generado como resultado de la transformación.
+
+### Cómo ejecutar la transformación
+
+**Opción 1. Navegador web**
+
+Abrir el archivo `datos/cafes.xml` en un navegador que interprete la instrucción `xml-stylesheet`, de forma que el navegador aplique automáticamente la hoja `xslt/cafes-to-html.xsl` y muestre el resultado en HTML.
+
+Después, se puede guardar o copiar el HTML generado como `cafes.html`.
+
+**Opción 2. XML Copy Editor**
+
+Abrir `cafes.xml` en XML Copy Editor, cargar la hoja `cafes-to-html.xsl` y ejecutar la transformación XSLT desde la propia aplicación para obtener el resultado final en HTML.
+
+Una vez generada la salida, se guarda como `cafes.html`.
+
+### Funcionalidades XSLT implementadas
+
+En la hoja `cafes-to-html.xsl` se han implementado varias funcionalidades XSLT para transformar el archivo XML de cafés en una página HTML estructurada y visualmente integrada con el resto del sitio.
+
+- **`xsl:output`**: define que la salida de la transformación sea un documento HTML con codificación UTF-8 y formato indentado.
+- **`xsl:variable`**: declara la variable global `totalCafes` para almacenar el número total de cafés del XML.
+- **`count()`**: cuenta todos los elementos `cafe` y permite mostrar el total de productos disponibles en la página.
+- **`xsl:template`**: se han creado dos plantillas, una para la raíz del documento (`match="/"`) y otra para cada nodo `cafe`.
+- **`xsl:apply-templates`**: aplica automáticamente la plantilla de cada café al conjunto de nodos seleccionados.
+- **`xsl:sort`**: ordena los cafés por el valor del elemento `precio`, tratándolo como dato numérico.
+- **`xsl:value-of`**: extrae y muestra valores del XML, como el nombre, la descripción, el precio, la imagen y el número de posición.
+- **`xsl:attribute`**: genera dinámicamente el atributo `src` de la imagen de cada producto.
+- **`xsl:text`**: añade texto fijo dentro de la construcción de la ruta de imagen, en este caso el prefijo `../`.
+- **`xsl:if`**: muestra la etiqueta `Nuevo` únicamente en los cafés que tienen el atributo `destacado="true"`.
+- **`position()`**: numera automáticamente cada café dentro del listado generado.
+
+### Captura del resultado final
+
+En la siguiente imagen se muestra el HTML generado a partir del XML y la hoja XSLT.
+
+![Captura del resultado final](Img/cafe-generado.png)
+
+
+## Prueba de consultas XPath
+
+Las consultas XPath fueron probadas utilizando XML Copy Editor.
+
+En la siguiente captura se puede observar la ejecución de una consulta XPath sobre el archivo XML de cafés.
+
+![Prueba XPath](Img/xpath-testing.png)
