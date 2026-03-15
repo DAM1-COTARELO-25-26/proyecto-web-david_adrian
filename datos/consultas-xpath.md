@@ -25,7 +25,7 @@ Selecciona todos los precios de los cafés sin usar ruta absoluta.
 Probar la selección básica de elementos numéricos del catálogo.
 
 ## 3. Predicado por atributo
-**Expresión XPath:** `cafeteria/cafes/cafe[@destacado='true']/nombre`
+**Expresión XPath:** `//cafe[@destacado='true']/nombre`
 
 **Qué selecciona:**
 Selecciona los nombres de los cafés marcados como destacados.
